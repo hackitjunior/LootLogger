@@ -10,7 +10,7 @@ class Item: Equatable {
     var name: String
     var valueInDollars: Int
     var serialNumber: String?
-    let dateCreated: Date
+    var dateCreated: Date
     
     init(name: String, serialNumber: String?, valueInDollars: Int){
         self.name = name
@@ -43,5 +43,9 @@ class Item: Equatable {
             && lhs.serialNumber == rhs.serialNumber
             && lhs.valueInDollars == rhs.valueInDollars
             && lhs.dateCreated == rhs.dateCreated
+    }
+    
+    func updateDate(with date: Date){
+        self.dateCreated = date
     }
 }

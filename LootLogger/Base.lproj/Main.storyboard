@@ -149,11 +149,18 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tQ-Qc-5VT">
-                                        <rect key="frame" x="0.0" y="126" width="398" height="632"/>
+                                        <rect key="frame" x="0.0" y="126" width="398" height="594"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6L-55-ps7">
+                                        <rect key="frame" x="0.0" y="728" width="398" height="30"/>
+                                        <state key="normal" title="Change date"/>
+                                        <connections>
+                                            <segue destination="Y5g-61-4x2" kind="show" identifier="changeDate" id="uhn-06-Pjm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="7pI-Yi-mCT" firstAttribute="leading" secondItem="I12-2x-YeM" secondAttribute="leading" id="6qY-09-ZaV"/>
@@ -190,6 +197,35 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2605.7971014492755" y="128.57142857142856"/>
+        </scene>
+        <!--Change Date View Controller-->
+        <scene sceneID="Erg-eO-iRF">
+            <objects>
+                <viewController id="Y5g-61-4x2" customClass="ChangeDateViewController" customModule="LootLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LiA-Lr-FZw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="EMO-At-MRD">
+                                <rect key="frame" x="8" y="96" width="398" height="216"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yo2-xV-3Tz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EMO-At-MRD" firstAttribute="top" secondItem="yo2-xV-3Tz" secondAttribute="top" constant="8" id="5dF-fB-NYv"/>
+                            <constraint firstItem="yo2-xV-3Tz" firstAttribute="trailing" secondItem="EMO-At-MRD" secondAttribute="trailing" constant="8" id="Mgi-Eg-pFb"/>
+                            <constraint firstItem="EMO-At-MRD" firstAttribute="leading" secondItem="yo2-xV-3Tz" secondAttribute="leading" constant="8" id="rd7-36-dTO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="krh-oN-9qr"/>
+                    <connections>
+                        <outlet property="datePicker" destination="EMO-At-MRD" id="S2N-gn-csf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C06-eQ-bYr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3424.6376811594205" y="128.57142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PbY-l1-hXx">

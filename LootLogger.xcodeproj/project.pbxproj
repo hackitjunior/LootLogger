@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F25D6F662669505700DA9267 /* ChangeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D6F652669505700DA9267 /* ChangeDateViewController.swift */; };
 		F296216E2667F32E0087AC8B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F296216D2667F32E0087AC8B /* DetailViewController.swift */; };
 		F2EA7628266165BD00E2DD41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA7627266165BD00E2DD41 /* AppDelegate.swift */; };
 		F2EA762A266165BD00E2DD41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA7629266165BD00E2DD41 /* SceneDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F25D6F652669505700DA9267 /* ChangeDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateViewController.swift; sourceTree = "<group>"; };
 		F296216D2667F32E0087AC8B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F2EA7624266165BD00E2DD41 /* LootLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LootLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EA7627266165BD00E2DD41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				F2EA766726616A4900E2DD41 /* ItemStore.swift */,
 				F2FF1FC8266694A7004576BD /* ItemCell.swift */,
 				F296216D2667F32E0087AC8B /* DetailViewController.swift */,
+				F25D6F652669505700DA9267 /* ChangeDateViewController.swift */,
 			);
 			path = LootLogger;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				F2EA765B266166D100E2DD41 /* ItemsViewController.swift in Sources */,
 				F2FF1FC9266694A7004576BD /* ItemCell.swift in Sources */,
 				F2EA7628266165BD00E2DD41 /* AppDelegate.swift in Sources */,
+				F25D6F662669505700DA9267 /* ChangeDateViewController.swift in Sources */,
 				F2EA766826616A4900E2DD41 /* ItemStore.swift in Sources */,
 				F2EA762A266165BD00E2DD41 /* SceneDelegate.swift in Sources */,
 				F296216E2667F32E0087AC8B /* DetailViewController.swift in Sources */,
