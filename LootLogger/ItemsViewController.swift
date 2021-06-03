@@ -10,6 +10,12 @@ import UIKit
 class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +65,7 @@ class ItemsViewController: UITableViewController {
 }
 
 extension ItemsViewController {
-    @IBAction func addNewItem(_ sender: UIButton){
+    @IBAction func addNewItem(_ sender: UIBarButtonItem){
         let newItem = itemStore.createItem()
         if let index = itemStore.allItems.firstIndex(of:newItem) {
             let indexPath = IndexPath(row: index, section: 0)
@@ -68,20 +74,14 @@ extension ItemsViewController {
         }
         
     }
-    
-    @IBAction func toggleEditingMode(_ sender: UIButton){
-        if isEditing {
-            sender.setTitle("Edit", for: .normal)
-            setEditing(false, animated: true)
-        } else {
-            sender.setTitle("Done", for: .normal)
-            setEditing(true, animated: true)
-        }
-    }
 }
 
 extension ItemsViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        
         switch segue.identifier {
         case "showItem":
             if let row = tableView.indexPathForSelectedRow?.row {
@@ -92,5 +92,11 @@ extension ItemsViewController {
         default:
             preconditionFailure("Unexpected segue identifier.")
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
 }
