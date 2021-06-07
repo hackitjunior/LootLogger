@@ -12,17 +12,25 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     var imageStore: ImageStore!
     
+    // MARK: - Initializers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         navigationItem.leftBarButtonItem = editButtonItem
     }
 
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // tableView.rowHeight = 65
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 65
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -67,6 +75,7 @@ class ItemsViewController: UITableViewController {
 }
 
 extension ItemsViewController {
+    // MARK: - Actions
     @IBAction func addNewItem(_ sender: UIBarButtonItem){
         let newItem = itemStore.createItem()
         if let index = itemStore.allItems.firstIndex(of:newItem) {
@@ -76,9 +85,7 @@ extension ItemsViewController {
         }
         
     }
-}
-
-extension ItemsViewController {
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
@@ -95,11 +102,5 @@ extension ItemsViewController {
         default:
             preconditionFailure("Unexpected segue identifier.")
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        tableView.reloadData()
     }
 }
