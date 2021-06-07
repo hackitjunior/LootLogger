@@ -15,6 +15,8 @@ class DetailViewController: UIViewController {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
+    @IBOutlet var clearButton: UIBarButtonItem!
+    
     var item: Item! {
         didSet {
             navigationItem.title = item.name
@@ -49,6 +51,9 @@ class DetailViewController: UIViewController {
         let key = item.itemKey
         let imageToDisplay = imageStore.image(forKey: key)
         imageView.image = imageToDisplay
+        if( imageToDisplay == nil){
+            clearButton.isEnabled = false
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -110,6 +115,13 @@ class DetailViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func clearImage(_ sender: UIBarButtonItem) {
+        imageView.image = nil
+        imageStore.deleteImage(forKey: item.itemKey)
+        clearButton.isEnabled = false
+    }
 }
 
 extension DetailViewController: UITextFieldDelegate {
@@ -132,6 +144,7 @@ extension DetailViewController: UINavigationControllerDelegate, UIImagePickerCon
         let image = info[.originalImage] as! UIImage
         imageStore.setImage(image, forKey: item.itemKey)
         imageView.image = image
+        clearButton.isEnabled = true
         dismiss(animated: true, completion: nil)
     }
 }

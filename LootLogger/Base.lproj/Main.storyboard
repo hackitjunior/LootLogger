@@ -172,6 +172,11 @@
                                                     <action selector="choosePhotoSource:" destination="163-hE-Uww" id="Zvy-GR-jAT"/>
                                                 </connections>
                                             </barButtonItem>
+                                            <barButtonItem systemItem="trash" id="YN6-f6-goO">
+                                                <connections>
+                                                    <action selector="clearImage:" destination="163-hE-Uww" id="tIa-ic-3ho"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </items>
                                     </toolbar>
                                 </subviews>
@@ -196,6 +201,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cSi-X0-XEY"/>
                     <connections>
+                        <outlet property="clearButton" destination="YN6-f6-goO" id="NYa-l0-yJO"/>
                         <outlet property="dateLabel" destination="1tQ-Qc-5VT" id="foq-dG-d2v"/>
                         <outlet property="imageView" destination="yjJ-jC-fJB" id="NmB-e6-45U"/>
                         <outlet property="nameField" destination="fWE-1B-Xv8" id="ecr-MT-sZF"/>
