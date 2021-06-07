@@ -8,7 +8,6 @@
 import UIKit
 
 class ItemStore {
-
     var allItems = [Item]()
     
     let itemArchiveURL: URL = {
@@ -58,18 +57,16 @@ class ItemStore {
         allItems.insert(movedItem, at: toIndex)
     }
     
-    @objc func saveChages() -> Bool {
+    @objc func saveChages() throws {
         
         do {
             let encoder = PropertyListEncoder()
             let data = try encoder.encode(allItems)
             try data.write(to: itemArchiveURL, options: [.atomic])
             print("Saved all of the items")
-
-            return true
         } catch {
             print("Error encoding allItems: \(error)")
-            return false
+            throw error
         }
         
     }

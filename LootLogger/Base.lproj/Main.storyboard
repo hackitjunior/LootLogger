@@ -149,18 +149,31 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tQ-Qc-5VT">
-                                        <rect key="frame" x="0.0" y="126" width="398" height="594"/>
+                                        <rect key="frame" x="0.0" y="126" width="398" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="yjJ-jC-fJB">
+                                        <rect key="frame" x="0.0" y="154.5" width="398" height="513.5"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6L-55-ps7">
-                                        <rect key="frame" x="0.0" y="728" width="398" height="30"/>
+                                        <rect key="frame" x="0.0" y="676" width="398" height="30"/>
                                         <state key="normal" title="Change date"/>
                                         <connections>
                                             <segue destination="Y5g-61-4x2" kind="show" identifier="changeDate" id="uhn-06-Pjm"/>
                                         </connections>
                                     </button>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFX-gj-oTK">
+                                        <rect key="frame" x="0.0" y="714" width="398" height="44"/>
+                                        <items>
+                                            <barButtonItem systemItem="camera" id="hRi-ke-FqA">
+                                                <connections>
+                                                    <action selector="choosePhotoSource:" destination="163-hE-Uww" id="Zvy-GR-jAT"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="7pI-Yi-mCT" firstAttribute="leading" secondItem="I12-2x-YeM" secondAttribute="leading" id="6qY-09-ZaV"/>
@@ -184,6 +197,7 @@
                     <navigationItem key="navigationItem" id="cSi-X0-XEY"/>
                     <connections>
                         <outlet property="dateLabel" destination="1tQ-Qc-5VT" id="foq-dG-d2v"/>
+                        <outlet property="imageView" destination="yjJ-jC-fJB" id="NmB-e6-45U"/>
                         <outlet property="nameField" destination="fWE-1B-Xv8" id="ecr-MT-sZF"/>
                         <outlet property="serialNumberField" destination="lm4-st-B1J" id="kD2-5a-u2r"/>
                         <outlet property="valueField" destination="X2z-Xb-Ylw" id="FRH-oh-7oQ"/>
